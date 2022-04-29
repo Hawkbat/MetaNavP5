@@ -2,12 +2,27 @@
 table {
     width: 100%;
     background: black;
+    border-collapse: collapse;
+}
+
+tr {
+    border-bottom: 2px solid red;
+}
+
+th {
+    background: #700;
+    color: white;
+}
+
+th, td {
+    padding: 5px;
 }
 
 .Header {
     top: 0;
     position: sticky;
     background: red;
+    z-index: 100;
 }
 
 .Header::after {
@@ -17,7 +32,7 @@ table {
     right: 0;
     top: 100%;
     height: 20px;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 255), rgba(0, 0, 0, 0));
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0));
 }
 
 .ImageLink {
@@ -26,34 +41,54 @@ table {
     margin-bottom: 20px;
 }
 
-.ImageLink::after {
+.ImageLink::before, .ImageLink::after {
     position: absolute;
     content: attr(data-label);
     left: 0;
     right: 0;
-    bottom: 0;
-    transform: translateY(25%);
+    bottom: -10px;
     color: white;
     font-size: 36px;
     font-weight: 900;
     line-height: 1em;
-    -webkit-text-stroke: 2px black;
-    -webkit-text-fill-color: white;
     text-align: center;
     pointer-events: none;
 }
 
+.ImageLink::before {
+    -webkit-text-stroke-width: 8px;
+    -webkit-text-stroke-color: black;
+}
+
 .Rank {
+    position: relative;
     font-weight: 900;
     text-align: center;
     font-size: 32px;
     margin-top: 15px;
-    -webkit-text-stroke: 2px black;
-    -webkit-text-fill-color: white;
+    color: white;
+}
+
+.Rank::before, .Rank::after {
+    position: absolute;
+    content: attr(data-label);
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    text-align: center;
+    pointer-events: none;
+}
+
+.Rank::before {
+    -webkit-text-stroke-width: 8px;
+    -webkit-text-stroke-color: black;
 }
 
 .RankNote {
     text-align: center;
+    font-weight: bold;
+    padding: 5px;
 }
 
 .Choice {

@@ -1,7 +1,7 @@
 body {
   margin: 0;
   min-height: 100%;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Arsenal', 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 16px;
@@ -9,4 +9,5 @@ body {
   background: red;
   color: white;
   text-align: center;
+  padding-bottom: 50px;
 }
